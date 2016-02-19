@@ -18,35 +18,38 @@ public class Calculator {
 	 * 
 	 */
 	public int getTotal () {
-		return 0;
+		return total;
 	}
 	
 	/** Add the parameter to the total variable
 	 *  @param value	value added to total
 	 */
 	public void add (int value) {
-		
+		total += value;
 	}
 	
 	/** Subtract the parameter from the total variable 
 	 *  @param value	value subtracted from total
 	 */
 	public void subtract (int value) {
-		
+		total -= value;
 	}
 	
 	/** Multiply the total by the total by the parameter 
 	 *  @param value	value multiplied by the total
 	 */
 	public void multiply (int value) {
-		
+		total *= value;
 	}
 	
 	/** Divide the total by the parameter
 	 *  @param value	value to divide the total by
 	 */
 	public void divide (int value) {
-		
+		if(value == 0)
+			total = 0;
+		else
+			total = total/value;
 	}
 	
 	/** Return a history of all actions as a String
