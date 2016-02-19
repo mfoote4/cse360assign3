@@ -9,9 +9,11 @@ package cse360assign3;
 public class Calculator {
 
 	private int total;
+	public String history;
 	
 	public Calculator () {
 		total = 0;  // not needed - included for clarity
+		history = "0";
 	}
 	
 	/** Returns the correct total
@@ -26,6 +28,7 @@ public class Calculator {
 	 */
 	public void add (int value) {
 		total += value;
+		history = history + " + " + value;
 	}
 	
 	/** Subtract the parameter from the total variable 
@@ -33,6 +36,7 @@ public class Calculator {
 	 */
 	public void subtract (int value) {
 		total -= value;
+		history = history + " - " + value;
 	}
 	
 	/** Multiply the total by the total by the parameter 
@@ -40,22 +44,27 @@ public class Calculator {
 	 */
 	public void multiply (int value) {
 		total *= value;
+		history = history + " * " + value;
 	}
 	
 	/** Divide the total by the parameter
 	 *  @param value	value to divide the total by
 	 */
 	public void divide (int value) {
-		if(value == 0)
+		if(value == 0) {
 			total = 0;
-		else
+			history = history + " / " + 0;
+		}
+		else {
 			total = total/value;
+			history = history + " / " + value;
+		}
 	}
 	
 	/** Return a history of all actions as a String
 	 * 
 	 */
 	public String getHistory () {
-		return "";
+		return history;
 	}
 }
